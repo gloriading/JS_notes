@@ -39,3 +39,26 @@ greeting.apply(companyInfo, newHireInfo)
 const welcomeMessage = greeting.bind(companyInfo)
 welcomeMessage("Tony", "Stark", "Accounting")
 ```
+
+## Arguments
+`The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. For example, it does not have the pop method. However it can be converted to a real Array:
+`
+
+*Example
+```
+function test(){
+  console.log(arguments)
+  // { '0': 'apple', '1': 12, '2': null, '3': {}, '4': [ 1, 2, 3, 4 ] }
+
+  const arr1 = [].slice.call(arguments);
+  console.log(arr1)
+  const arr2 = [...arguments]
+  console.log(arr2)
+  const arr3 = Array.from(arguments)
+  console.log(arr3)
+  // the above three give array
+  //[ 'apple', 12, null, {}, [ 1, 2, 3, 4 ] ]
+}
+
+test('apple', 12, null, {}, [1,2,3,4])
+```
