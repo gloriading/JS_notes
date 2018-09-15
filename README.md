@@ -1,5 +1,13 @@
 # JS_notes
 
+## What is a predicate?
+```
+const lessThanTen = (x) =>  x < 10 
+[1,7,15,22].filter( lessThanTen ) 
+```
+the function lessThanTen is the predicate here, which is applied to each item in the list.
+
+
 ## Immutability
 
 * Example 1
