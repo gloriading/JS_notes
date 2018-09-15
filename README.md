@@ -1,6 +1,9 @@
 # JS_notes
 
 ## What is a predicate?
+
+* A predicate is a function that always returns a boolean value.
+
 ```
 const lessThanTen = (x) =>  x < 10 
 [1,7,15,22].filter( lessThanTen ) 
