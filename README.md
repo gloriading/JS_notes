@@ -1,5 +1,57 @@
 # JS_notes
 
+## Immutability
+
+* Example 1
+```
+let first_colour = {
+  title: "apple",
+  color: "red",
+  rating: 2
+}
+// Method 1:
+// const rateColour = (colour, rating) => Object.assign({}, colour, {rating})
+
+// Method 2: (es6)
+const rateColour = (colour, rating) => ({ ...colour, rating })
+
+// copy all colours to a new object and update it's rating
+// colour is an immutable object, need ({ }) , can't be just { }
+
+console.log(rateColour(first_colour, 5).rating)
+
+```
+
+* example 2
+```
+const stuList = [
+  {name: 'Amy'},
+  {name: 'Ivy'},
+  {name: 'Helen'}
+];
+
+// Method 1: use concat since it won't mutate the original 
+// const addToList = (newItem, list) => (list.concat({newItem}))
+
+
+// Method 2: es6
+// copy the entire array to a new array and add newItem to it
+const addToList = (newItem, list) => [...list, {newItem}];
+
+console.log(addToList('Ben', stuList));
+// Result:
+/*
+[ { name: 'Amy' },
+  { name: 'Ivy' },
+  { name: 'Helen' },
+  { newItem: 'Ben' } ]
+*/
+console.log(stuList)
+//[ { name: 'Amy' }, { name: 'Ivy' }, { name: 'Helen' } ]
+
+```
+
+
 ## Call, Apply, Bind
 
 *Example 1
